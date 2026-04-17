@@ -1,0 +1,649 @@
+2026-04-16 23:12:31 PyHealthAlzheimersCNN_NormVariant(
+  (block1): Sequential(
+    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): GroupNorm(8, 32, eps=1e-05, affine=True)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (block2): Sequential(
+    (0): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): GroupNorm(8, 64, eps=1e-05, affine=True)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (block3): Sequential(
+    (0): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): GroupNorm(8, 128, eps=1e-05, affine=True)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (block4): Sequential(
+    (0): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): GroupNorm(8, 256, eps=1e-05, affine=True)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): AdaptiveAvgPool2d(output_size=(1, 1))
+  )
+  (classifier): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): LeakyReLU(negative_slope=0.01, inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=128, out_features=4, bias=True)
+  )
+)
+2026-04-16 23:12:31 Metrics: ['accuracy', 'f1_macro']
+2026-04-16 23:12:31 Device: mps
+2026-04-16 23:12:31 
+2026-04-16 23:12:31 Training:
+2026-04-16 23:12:31 Batch size: 32
+2026-04-16 23:12:31 Optimizer: <class 'torch.optim.adamw.AdamW'>
+2026-04-16 23:12:31 Optimizer params: {'lr': 0.0001, 'weight_decay': 1e-05}
+2026-04-16 23:12:31 Weight decay: 0.0
+2026-04-16 23:12:31 Max grad norm: None
+2026-04-16 23:12:31 Val dataloader: <torch.utils.data.dataloader.DataLoader object at 0x357ed1520>
+2026-04-16 23:12:31 Monitor: None
+2026-04-16 23:12:31 Monitor criterion: max
+2026-04-16 23:12:31 Epochs: 50
+2026-04-16 23:12:31 Patience: None
+2026-04-16 23:12:31 
+2026-04-16 23:12:42 --- Train epoch-0, step-160 ---
+2026-04-16 23:12:42 loss: 1.0736
+2026-04-16 23:12:43 --- Eval epoch-0, step-160 ---
+2026-04-16 23:12:43 accuracy: 0.4984
+2026-04-16 23:12:43 f1_macro: 0.1703
+2026-04-16 23:12:43 loss: 1.0309
+2026-04-16 23:12:43 
+2026-04-16 23:12:52 --- Train epoch-1, step-320 ---
+2026-04-16 23:12:52 loss: 1.0153
+2026-04-16 23:12:53 --- Eval epoch-1, step-320 ---
+2026-04-16 23:12:53 accuracy: 0.5258
+2026-04-16 23:12:53 f1_macro: 0.2660
+2026-04-16 23:12:53 loss: 0.9545
+2026-04-16 23:12:53 
+2026-04-16 23:13:02 --- Train epoch-2, step-480 ---
+2026-04-16 23:13:02 loss: 0.9709
+2026-04-16 23:13:03 --- Eval epoch-2, step-480 ---
+2026-04-16 23:13:03 accuracy: 0.5281
+2026-04-16 23:13:03 f1_macro: 0.2838
+2026-04-16 23:13:03 loss: 0.9326
+2026-04-16 23:13:03 
+2026-04-16 23:13:12 --- Train epoch-3, step-640 ---
+2026-04-16 23:13:12 loss: 0.9496
+2026-04-16 23:13:13 --- Eval epoch-3, step-640 ---
+2026-04-16 23:13:13 accuracy: 0.5406
+2026-04-16 23:13:13 f1_macro: 0.2850
+2026-04-16 23:13:13 loss: 0.9322
+2026-04-16 23:13:13 
+2026-04-16 23:13:22 --- Train epoch-4, step-800 ---
+2026-04-16 23:13:22 loss: 0.9386
+2026-04-16 23:13:23 --- Eval epoch-4, step-800 ---
+2026-04-16 23:13:23 accuracy: 0.5289
+2026-04-16 23:13:23 f1_macro: 0.2671
+2026-04-16 23:13:23 loss: 0.9747
+2026-04-16 23:13:23 
+2026-04-16 23:13:33 --- Train epoch-5, step-960 ---
+2026-04-16 23:13:33 loss: 0.9298
+2026-04-16 23:13:34 --- Eval epoch-5, step-960 ---
+2026-04-16 23:13:34 accuracy: 0.5352
+2026-04-16 23:13:34 f1_macro: 0.2893
+2026-04-16 23:13:34 loss: 0.9221
+2026-04-16 23:13:34 
+2026-04-16 23:13:43 --- Train epoch-6, step-1120 ---
+2026-04-16 23:13:43 loss: 0.9267
+2026-04-16 23:13:44 --- Eval epoch-6, step-1120 ---
+2026-04-16 23:13:44 accuracy: 0.5453
+2026-04-16 23:13:44 f1_macro: 0.2895
+2026-04-16 23:13:44 loss: 0.9138
+2026-04-16 23:13:44 
+2026-04-16 23:13:53 --- Train epoch-7, step-1280 ---
+2026-04-16 23:13:53 loss: 0.9306
+2026-04-16 23:13:54 --- Eval epoch-7, step-1280 ---
+2026-04-16 23:13:54 accuracy: 0.5516
+2026-04-16 23:13:54 f1_macro: 0.2898
+2026-04-16 23:13:54 loss: 0.9229
+2026-04-16 23:13:54 
+2026-04-16 23:14:04 --- Train epoch-8, step-1440 ---
+2026-04-16 23:14:04 loss: 0.9123
+2026-04-16 23:14:05 --- Eval epoch-8, step-1440 ---
+2026-04-16 23:14:05 accuracy: 0.5500
+2026-04-16 23:14:05 f1_macro: 0.2970
+2026-04-16 23:14:05 loss: 0.9102
+2026-04-16 23:14:05 
+2026-04-16 23:14:14 --- Train epoch-9, step-1600 ---
+2026-04-16 23:14:14 loss: 0.9169
+2026-04-16 23:14:15 --- Eval epoch-9, step-1600 ---
+2026-04-16 23:14:15 accuracy: 0.5508
+2026-04-16 23:14:15 f1_macro: 0.2982
+2026-04-16 23:14:15 loss: 0.9228
+2026-04-16 23:14:15 
+2026-04-16 23:14:24 --- Train epoch-10, step-1760 ---
+2026-04-16 23:14:24 loss: 0.9097
+2026-04-16 23:14:25 --- Eval epoch-10, step-1760 ---
+2026-04-16 23:14:25 accuracy: 0.5391
+2026-04-16 23:14:25 f1_macro: 0.2924
+2026-04-16 23:14:25 loss: 0.9353
+2026-04-16 23:14:25 
+2026-04-16 23:14:35 --- Train epoch-11, step-1920 ---
+2026-04-16 23:14:35 loss: 0.9175
+2026-04-16 23:14:36 --- Eval epoch-11, step-1920 ---
+2026-04-16 23:14:36 accuracy: 0.5508
+2026-04-16 23:14:36 f1_macro: 0.2981
+2026-04-16 23:14:36 loss: 0.9170
+2026-04-16 23:14:36 
+2026-04-16 23:14:45 --- Train epoch-12, step-2080 ---
+2026-04-16 23:14:45 loss: 0.9073
+2026-04-16 23:14:46 --- Eval epoch-12, step-2080 ---
+2026-04-16 23:14:46 accuracy: 0.5500
+2026-04-16 23:14:46 f1_macro: 0.2932
+2026-04-16 23:14:46 loss: 0.8954
+2026-04-16 23:14:46 
+2026-04-16 23:14:55 --- Train epoch-13, step-2240 ---
+2026-04-16 23:14:55 loss: 0.9158
+2026-04-16 23:14:56 --- Eval epoch-13, step-2240 ---
+2026-04-16 23:14:56 accuracy: 0.5625
+2026-04-16 23:14:56 f1_macro: 0.2948
+2026-04-16 23:14:56 loss: 0.9016
+2026-04-16 23:14:56 
+2026-04-16 23:15:05 --- Train epoch-14, step-2400 ---
+2026-04-16 23:15:05 loss: 0.9033
+2026-04-16 23:15:06 --- Eval epoch-14, step-2400 ---
+2026-04-16 23:15:06 accuracy: 0.5477
+2026-04-16 23:15:06 f1_macro: 0.2953
+2026-04-16 23:15:06 loss: 0.9021
+2026-04-16 23:15:06 
+2026-04-16 23:15:16 --- Train epoch-15, step-2560 ---
+2026-04-16 23:15:16 loss: 0.8956
+2026-04-16 23:15:17 --- Eval epoch-15, step-2560 ---
+2026-04-16 23:15:17 accuracy: 0.5484
+2026-04-16 23:15:17 f1_macro: 0.2967
+2026-04-16 23:15:17 loss: 0.9260
+2026-04-16 23:15:17 
+2026-04-16 23:15:26 --- Train epoch-16, step-2720 ---
+2026-04-16 23:15:26 loss: 0.8867
+2026-04-16 23:15:27 --- Eval epoch-16, step-2720 ---
+2026-04-16 23:15:27 accuracy: 0.5563
+2026-04-16 23:15:27 f1_macro: 0.2972
+2026-04-16 23:15:27 loss: 0.8833
+2026-04-16 23:15:27 
+2026-04-16 23:15:37 --- Train epoch-17, step-2880 ---
+2026-04-16 23:15:37 loss: 0.8825
+2026-04-16 23:15:37 --- Eval epoch-17, step-2880 ---
+2026-04-16 23:15:37 accuracy: 0.5445
+2026-04-16 23:15:37 f1_macro: 0.2921
+2026-04-16 23:15:37 loss: 0.8855
+2026-04-16 23:15:37 
+2026-04-16 23:15:47 --- Train epoch-18, step-3040 ---
+2026-04-16 23:15:47 loss: 0.8762
+2026-04-16 23:15:48 --- Eval epoch-18, step-3040 ---
+2026-04-16 23:15:48 accuracy: 0.5547
+2026-04-16 23:15:48 f1_macro: 0.3010
+2026-04-16 23:15:48 loss: 0.8907
+2026-04-16 23:15:48 
+2026-04-16 23:15:57 --- Train epoch-19, step-3200 ---
+2026-04-16 23:15:57 loss: 0.8722
+2026-04-16 23:15:58 --- Eval epoch-19, step-3200 ---
+2026-04-16 23:15:58 accuracy: 0.5547
+2026-04-16 23:15:58 f1_macro: 0.3005
+2026-04-16 23:15:58 loss: 0.8826
+2026-04-16 23:15:58 
+2026-04-16 23:16:07 --- Train epoch-20, step-3360 ---
+2026-04-16 23:16:07 loss: 0.8659
+2026-04-16 23:16:08 --- Eval epoch-20, step-3360 ---
+2026-04-16 23:16:08 accuracy: 0.5555
+2026-04-16 23:16:08 f1_macro: 0.3015
+2026-04-16 23:16:08 loss: 0.8986
+2026-04-16 23:16:08 
+2026-04-16 23:16:17 --- Train epoch-21, step-3520 ---
+2026-04-16 23:16:17 loss: 0.8768
+2026-04-16 23:16:18 --- Eval epoch-21, step-3520 ---
+2026-04-16 23:16:18 accuracy: 0.5570
+2026-04-16 23:16:18 f1_macro: 0.2829
+2026-04-16 23:16:18 loss: 0.9283
+2026-04-16 23:16:18 
+2026-04-16 23:16:27 --- Train epoch-22, step-3680 ---
+2026-04-16 23:16:27 loss: 0.8580
+2026-04-16 23:16:28 --- Eval epoch-22, step-3680 ---
+2026-04-16 23:16:28 accuracy: 0.5687
+2026-04-16 23:16:28 f1_macro: 0.3039
+2026-04-16 23:16:28 loss: 0.8668
+2026-04-16 23:16:28 
+2026-04-16 23:16:37 --- Train epoch-23, step-3840 ---
+2026-04-16 23:16:37 loss: 0.8667
+2026-04-16 23:16:38 --- Eval epoch-23, step-3840 ---
+2026-04-16 23:16:38 accuracy: 0.5563
+2026-04-16 23:16:38 f1_macro: 0.2873
+2026-04-16 23:16:38 loss: 0.8761
+2026-04-16 23:16:38 
+2026-04-16 23:16:48 --- Train epoch-24, step-4000 ---
+2026-04-16 23:16:48 loss: 0.8545
+2026-04-16 23:16:48 --- Eval epoch-24, step-4000 ---
+2026-04-16 23:16:48 accuracy: 0.5602
+2026-04-16 23:16:48 f1_macro: 0.2883
+2026-04-16 23:16:48 loss: 0.8930
+2026-04-16 23:16:48 
+2026-04-16 23:16:58 --- Train epoch-25, step-4160 ---
+2026-04-16 23:16:58 loss: 0.8594
+2026-04-16 23:16:59 --- Eval epoch-25, step-4160 ---
+2026-04-16 23:16:59 accuracy: 0.5641
+2026-04-16 23:16:59 f1_macro: 0.3049
+2026-04-16 23:16:59 loss: 0.8570
+2026-04-16 23:16:59 
+2026-04-16 23:17:08 --- Train epoch-26, step-4320 ---
+2026-04-16 23:17:08 loss: 0.8509
+2026-04-16 23:17:09 --- Eval epoch-26, step-4320 ---
+2026-04-16 23:17:09 accuracy: 0.5695
+2026-04-16 23:17:09 f1_macro: 0.3063
+2026-04-16 23:17:09 loss: 0.8625
+2026-04-16 23:17:09 
+2026-04-16 23:17:18 --- Train epoch-27, step-4480 ---
+2026-04-16 23:17:18 loss: 0.8466
+2026-04-16 23:17:19 --- Eval epoch-27, step-4480 ---
+2026-04-16 23:17:19 accuracy: 0.5711
+2026-04-16 23:17:19 f1_macro: 0.3136
+2026-04-16 23:17:19 loss: 0.8576
+2026-04-16 23:17:19 
+2026-04-16 23:17:28 --- Train epoch-28, step-4640 ---
+2026-04-16 23:17:28 loss: 0.8545
+2026-04-16 23:17:29 --- Eval epoch-28, step-4640 ---
+2026-04-16 23:17:29 accuracy: 0.5734
+2026-04-16 23:17:29 f1_macro: 0.3248
+2026-04-16 23:17:29 loss: 0.8663
+2026-04-16 23:17:29 
+2026-04-16 23:17:38 --- Train epoch-29, step-4800 ---
+2026-04-16 23:17:38 loss: 0.8434
+2026-04-16 23:17:39 --- Eval epoch-29, step-4800 ---
+2026-04-16 23:17:39 accuracy: 0.5422
+2026-04-16 23:17:39 f1_macro: 0.2725
+2026-04-16 23:17:39 loss: 0.9181
+2026-04-16 23:17:39 
+2026-04-16 23:17:48 --- Train epoch-30, step-4960 ---
+2026-04-16 23:17:48 loss: 0.8412
+2026-04-16 23:17:49 --- Eval epoch-30, step-4960 ---
+2026-04-16 23:17:49 accuracy: 0.5656
+2026-04-16 23:17:49 f1_macro: 0.3189
+2026-04-16 23:17:49 loss: 0.8646
+2026-04-16 23:17:49 
+2026-04-16 23:17:59 --- Train epoch-31, step-5120 ---
+2026-04-16 23:17:59 loss: 0.8337
+2026-04-16 23:18:00 --- Eval epoch-31, step-5120 ---
+2026-04-16 23:18:00 accuracy: 0.5711
+2026-04-16 23:18:00 f1_macro: 0.3494
+2026-04-16 23:18:00 loss: 0.8472
+2026-04-16 23:18:00 
+2026-04-16 23:18:09 --- Train epoch-32, step-5280 ---
+2026-04-16 23:18:09 loss: 0.8322
+2026-04-16 23:18:10 --- Eval epoch-32, step-5280 ---
+2026-04-16 23:18:10 accuracy: 0.5734
+2026-04-16 23:18:10 f1_macro: 0.3337
+2026-04-16 23:18:10 loss: 0.8560
+2026-04-16 23:18:10 
+2026-04-16 23:18:19 --- Train epoch-33, step-5440 ---
+2026-04-16 23:18:19 loss: 0.8339
+2026-04-16 23:18:20 --- Eval epoch-33, step-5440 ---
+2026-04-16 23:18:20 accuracy: 0.5336
+2026-04-16 23:18:20 f1_macro: 0.3778
+2026-04-16 23:18:20 loss: 0.9255
+2026-04-16 23:18:20 
+2026-04-16 23:18:30 --- Train epoch-34, step-5600 ---
+2026-04-16 23:18:30 loss: 0.8365
+2026-04-16 23:18:31 --- Eval epoch-34, step-5600 ---
+2026-04-16 23:18:31 accuracy: 0.5766
+2026-04-16 23:18:31 f1_macro: 0.3241
+2026-04-16 23:18:31 loss: 0.8369
+2026-04-16 23:18:31 
+2026-04-16 23:18:40 --- Train epoch-35, step-5760 ---
+2026-04-16 23:18:40 loss: 0.8257
+2026-04-16 23:18:41 --- Eval epoch-35, step-5760 ---
+2026-04-16 23:18:41 accuracy: 0.5813
+2026-04-16 23:18:41 f1_macro: 0.3542
+2026-04-16 23:18:41 loss: 0.8387
+2026-04-16 23:18:41 
+2026-04-16 23:18:50 --- Train epoch-36, step-5920 ---
+2026-04-16 23:18:50 loss: 0.8355
+2026-04-16 23:18:51 --- Eval epoch-36, step-5920 ---
+2026-04-16 23:18:51 accuracy: 0.5711
+2026-04-16 23:18:51 f1_macro: 0.3315
+2026-04-16 23:18:51 loss: 0.8417
+2026-04-16 23:18:51 
+2026-04-16 23:19:01 --- Train epoch-37, step-6080 ---
+2026-04-16 23:19:01 loss: 0.8174
+2026-04-16 23:19:02 --- Eval epoch-37, step-6080 ---
+2026-04-16 23:19:02 accuracy: 0.5703
+2026-04-16 23:19:02 f1_macro: 0.3684
+2026-04-16 23:19:02 loss: 0.8302
+2026-04-16 23:19:02 
+2026-04-16 23:19:11 --- Train epoch-38, step-6240 ---
+2026-04-16 23:19:11 loss: 0.8177
+2026-04-16 23:19:12 --- Eval epoch-38, step-6240 ---
+2026-04-16 23:19:12 accuracy: 0.5727
+2026-04-16 23:19:12 f1_macro: 0.3334
+2026-04-16 23:19:12 loss: 0.8384
+2026-04-16 23:19:12 
+2026-04-16 23:19:22 --- Train epoch-39, step-6400 ---
+2026-04-16 23:19:22 loss: 0.8063
+2026-04-16 23:19:23 --- Eval epoch-39, step-6400 ---
+2026-04-16 23:19:23 accuracy: 0.5766
+2026-04-16 23:19:23 f1_macro: 0.3792
+2026-04-16 23:19:23 loss: 0.8245
+2026-04-16 23:19:23 
+2026-04-16 23:19:54 PyHealthAlzheimersCNN_DepthwiseSep3D(
+  (block1): Sequential(
+    (0): DepthwiseSeparableConv3d(
+      (depthwise): Conv3d(1, 1, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (pointwise): Conv3d(1, 32, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+    )
+    (1): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (block2): Sequential(
+    (0): DepthwiseSeparableConv3d(
+      (depthwise): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=32)
+      (pointwise): Conv3d(32, 64, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+    )
+    (1): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (block3): Sequential(
+    (0): DepthwiseSeparableConv3d(
+      (depthwise): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=64)
+      (pointwise): Conv3d(64, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+    )
+    (1): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (block4): Sequential(
+    (0): DepthwiseSeparableConv3d(
+      (depthwise): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=128)
+      (pointwise): Conv3d(128, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+    )
+    (1): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): AdaptiveAvgPool3d(output_size=(1, 1, 1))
+  )
+  (classifier): Sequential(
+    (0): Linear(in_features=256, out_features=128, bias=True)
+    (1): LeakyReLU(negative_slope=0.01, inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=128, out_features=4, bias=True)
+  )
+)
+2026-04-16 23:19:54 Metrics: ['accuracy', 'f1_macro']
+2026-04-16 23:19:54 Device: mps
+2026-04-16 23:19:54 
+2026-04-16 23:19:54 Training:
+2026-04-16 23:19:54 Batch size: 32
+2026-04-16 23:19:54 Optimizer: <class 'torch.optim.adamw.AdamW'>
+2026-04-16 23:19:54 Optimizer params: {'lr': 0.0001, 'weight_decay': 1e-05}
+2026-04-16 23:19:54 Weight decay: 0.0
+2026-04-16 23:19:54 Max grad norm: None
+2026-04-16 23:19:54 Val dataloader: <torch.utils.data.dataloader.DataLoader object at 0x357b30da0>
+2026-04-16 23:19:54 Monitor: None
+2026-04-16 23:19:54 Monitor criterion: max
+2026-04-16 23:19:54 Epochs: 30
+2026-04-16 23:19:54 Patience: None
+2026-04-16 23:19:54 
+2026-04-16 23:21:59 PyHealthAlzheimersCNN_ViT(
+  (block1): Sequential(
+    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): InstanceNorm2d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (block2): Sequential(
+    (0): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (patch_embed): PatchEmbedding(
+    (projection): Linear(in_features=1024, out_features=128, bias=True)
+  )
+  (transformer): TransformerEncoder(
+    (layers): ModuleList(
+      (0-3): 4 x TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+        )
+        (linear1): Linear(in_features=128, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=512, out_features=128, bias=True)
+        (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (classifier): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): LeakyReLU(negative_slope=0.01, inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=128, out_features=4, bias=True)
+  )
+)
+2026-04-16 23:21:59 Metrics: ['accuracy', 'f1_macro']
+2026-04-16 23:21:59 Device: mps
+2026-04-16 23:21:59 
+2026-04-16 23:21:59 Training:
+2026-04-16 23:21:59 Batch size: 32
+2026-04-16 23:21:59 Optimizer: <class 'torch.optim.adamw.AdamW'>
+2026-04-16 23:21:59 Optimizer params: {'lr': 0.0001, 'weight_decay': 1e-05}
+2026-04-16 23:22:00 Weight decay: 0.0
+2026-04-16 23:22:00 Max grad norm: None
+2026-04-16 23:22:00 Val dataloader: <torch.utils.data.dataloader.DataLoader object at 0x357e0c140>
+2026-04-16 23:22:00 Monitor: None
+2026-04-16 23:22:00 Monitor criterion: max
+2026-04-16 23:22:00 Epochs: 30
+2026-04-16 23:22:00 Patience: None
+2026-04-16 23:22:00 
+2026-04-16 23:22:11 --- Train epoch-0, step-160 ---
+2026-04-16 23:22:11 loss: 1.0799
+2026-04-16 23:22:12 --- Eval epoch-0, step-160 ---
+2026-04-16 23:22:12 accuracy: 0.4953
+2026-04-16 23:22:12 f1_macro: 0.1656
+2026-04-16 23:22:12 loss: 1.0411
+2026-04-16 23:22:12 
+2026-04-16 23:22:20 --- Train epoch-1, step-320 ---
+2026-04-16 23:22:20 loss: 1.0635
+2026-04-16 23:22:21 --- Eval epoch-1, step-320 ---
+2026-04-16 23:22:21 accuracy: 0.4953
+2026-04-16 23:22:21 f1_macro: 0.1656
+2026-04-16 23:22:21 loss: 1.0378
+2026-04-16 23:22:21 
+2026-04-16 23:22:29 --- Train epoch-2, step-480 ---
+2026-04-16 23:22:29 loss: 1.0332
+2026-04-16 23:22:30 --- Eval epoch-2, step-480 ---
+2026-04-16 23:22:30 accuracy: 0.5352
+2026-04-16 23:22:30 f1_macro: 0.2623
+2026-04-16 23:22:30 loss: 1.0153
+2026-04-16 23:22:30 
+2026-04-16 23:22:38 --- Train epoch-3, step-640 ---
+2026-04-16 23:22:38 loss: 0.9352
+2026-04-16 23:22:39 --- Eval epoch-3, step-640 ---
+2026-04-16 23:22:39 accuracy: 0.5875
+2026-04-16 23:22:39 f1_macro: 0.3424
+2026-04-16 23:22:39 loss: 0.9238
+2026-04-16 23:22:39 
+2026-04-16 23:22:47 --- Train epoch-4, step-800 ---
+2026-04-16 23:22:47 loss: 0.8933
+2026-04-16 23:22:47 --- Eval epoch-4, step-800 ---
+2026-04-16 23:22:47 accuracy: 0.5828
+2026-04-16 23:22:47 f1_macro: 0.3150
+2026-04-16 23:22:47 loss: 0.9001
+2026-04-16 23:22:47 
+2026-04-16 23:22:56 --- Train epoch-5, step-960 ---
+2026-04-16 23:22:56 loss: 0.8796
+2026-04-16 23:22:56 --- Eval epoch-5, step-960 ---
+2026-04-16 23:22:56 accuracy: 0.5703
+2026-04-16 23:22:56 f1_macro: 0.2973
+2026-04-16 23:22:56 loss: 0.9325
+2026-04-16 23:22:56 
+2026-04-16 23:23:04 --- Train epoch-6, step-1120 ---
+2026-04-16 23:23:04 loss: 0.8597
+2026-04-16 23:23:05 --- Eval epoch-6, step-1120 ---
+2026-04-16 23:23:05 accuracy: 0.6016
+2026-04-16 23:23:05 f1_macro: 0.3957
+2026-04-16 23:23:05 loss: 0.8812
+2026-04-16 23:23:05 
+2026-04-16 23:23:13 --- Train epoch-7, step-1280 ---
+2026-04-16 23:23:13 loss: 0.8272
+2026-04-16 23:23:14 --- Eval epoch-7, step-1280 ---
+2026-04-16 23:23:14 accuracy: 0.6133
+2026-04-16 23:23:14 f1_macro: 0.4136
+2026-04-16 23:23:14 loss: 0.8452
+2026-04-16 23:23:14 
+2026-04-16 23:23:22 --- Train epoch-8, step-1440 ---
+2026-04-16 23:23:22 loss: 0.7894
+2026-04-16 23:23:23 --- Eval epoch-8, step-1440 ---
+2026-04-16 23:23:23 accuracy: 0.5516
+2026-04-16 23:23:23 f1_macro: 0.2847
+2026-04-16 23:23:23 loss: 1.0510
+2026-04-16 23:23:23 
+2026-04-16 23:23:31 --- Train epoch-9, step-1600 ---
+2026-04-16 23:23:31 loss: 0.7586
+2026-04-16 23:23:31 --- Eval epoch-9, step-1600 ---
+2026-04-16 23:23:31 accuracy: 0.6523
+2026-04-16 23:23:31 f1_macro: 0.4686
+2026-04-16 23:23:31 loss: 0.7768
+2026-04-16 23:23:31 
+2026-04-16 23:23:40 --- Train epoch-10, step-1760 ---
+2026-04-16 23:23:40 loss: 0.6998
+2026-04-16 23:23:40 --- Eval epoch-10, step-1760 ---
+2026-04-16 23:23:40 accuracy: 0.6727
+2026-04-16 23:23:40 f1_macro: 0.4552
+2026-04-16 23:23:40 loss: 0.7668
+2026-04-16 23:23:40 
+2026-04-16 23:23:48 --- Train epoch-11, step-1920 ---
+2026-04-16 23:23:48 loss: 0.6447
+2026-04-16 23:23:49 --- Eval epoch-11, step-1920 ---
+2026-04-16 23:23:49 accuracy: 0.6555
+2026-04-16 23:23:49 f1_macro: 0.4607
+2026-04-16 23:23:49 loss: 0.8259
+2026-04-16 23:23:49 
+2026-04-16 23:23:57 --- Train epoch-12, step-2080 ---
+2026-04-16 23:23:57 loss: 0.6061
+2026-04-16 23:23:58 --- Eval epoch-12, step-2080 ---
+2026-04-16 23:23:58 accuracy: 0.7109
+2026-04-16 23:23:58 f1_macro: 0.5166
+2026-04-16 23:23:58 loss: 0.6749
+2026-04-16 23:23:58 
+2026-04-16 23:24:06 --- Train epoch-13, step-2240 ---
+2026-04-16 23:24:06 loss: 0.5282
+2026-04-16 23:24:07 --- Eval epoch-13, step-2240 ---
+2026-04-16 23:24:07 accuracy: 0.7031
+2026-04-16 23:24:07 f1_macro: 0.4869
+2026-04-16 23:24:07 loss: 0.7708
+2026-04-16 23:24:07 
+2026-04-16 23:24:15 --- Train epoch-14, step-2400 ---
+2026-04-16 23:24:15 loss: 0.4904
+2026-04-16 23:24:16 --- Eval epoch-14, step-2400 ---
+2026-04-16 23:24:16 accuracy: 0.7266
+2026-04-16 23:24:16 f1_macro: 0.5301
+2026-04-16 23:24:16 loss: 0.6461
+2026-04-16 23:24:16 
+2026-04-16 23:24:24 --- Train epoch-15, step-2560 ---
+2026-04-16 23:24:24 loss: 0.4071
+2026-04-16 23:24:25 --- Eval epoch-15, step-2560 ---
+2026-04-16 23:24:25 accuracy: 0.7570
+2026-04-16 23:24:25 f1_macro: 0.5541
+2026-04-16 23:24:25 loss: 0.6069
+2026-04-16 23:24:25 
+2026-04-16 23:24:33 --- Train epoch-16, step-2720 ---
+2026-04-16 23:24:33 loss: 0.3618
+2026-04-16 23:24:33 --- Eval epoch-16, step-2720 ---
+2026-04-16 23:24:33 accuracy: 0.7562
+2026-04-16 23:24:33 f1_macro: 0.5247
+2026-04-16 23:24:33 loss: 0.6281
+2026-04-16 23:24:33 
+2026-04-16 23:24:42 --- Train epoch-17, step-2880 ---
+2026-04-16 23:24:42 loss: 0.3155
+2026-04-16 23:24:42 --- Eval epoch-17, step-2880 ---
+2026-04-16 23:24:42 accuracy: 0.7688
+2026-04-16 23:24:42 f1_macro: 0.5507
+2026-04-16 23:24:42 loss: 0.6440
+2026-04-16 23:24:42 
+2026-04-16 23:24:50 --- Train epoch-18, step-3040 ---
+2026-04-16 23:24:50 loss: 0.2904
+2026-04-16 23:24:51 --- Eval epoch-18, step-3040 ---
+2026-04-16 23:24:51 accuracy: 0.7758
+2026-04-16 23:24:51 f1_macro: 0.5406
+2026-04-16 23:24:51 loss: 0.7325
+2026-04-16 23:24:51 
+2026-04-16 23:24:59 --- Train epoch-19, step-3200 ---
+2026-04-16 23:24:59 loss: 0.2346
+2026-04-16 23:25:00 --- Eval epoch-19, step-3200 ---
+2026-04-16 23:25:00 accuracy: 0.7531
+2026-04-16 23:25:00 f1_macro: 0.5638
+2026-04-16 23:25:00 loss: 0.7210
+2026-04-16 23:25:00 
+2026-04-16 23:25:09 --- Train epoch-20, step-3360 ---
+2026-04-16 23:25:09 loss: 0.2554
+2026-04-16 23:25:09 --- Eval epoch-20, step-3360 ---
+2026-04-16 23:25:09 accuracy: 0.7914
+2026-04-16 23:25:09 f1_macro: 0.5551
+2026-04-16 23:25:09 loss: 0.6370
+2026-04-16 23:25:09 
+2026-04-16 23:25:18 --- Train epoch-21, step-3520 ---
+2026-04-16 23:25:18 loss: 0.1880
+2026-04-16 23:25:19 --- Eval epoch-21, step-3520 ---
+2026-04-16 23:25:19 accuracy: 0.8406
+2026-04-16 23:25:19 f1_macro: 0.6103
+2026-04-16 23:25:19 loss: 0.5487
+2026-04-16 23:25:19 
+2026-04-16 23:25:28 --- Train epoch-22, step-3680 ---
+2026-04-16 23:25:28 loss: 0.1646
+2026-04-16 23:25:28 --- Eval epoch-22, step-3680 ---
+2026-04-16 23:25:28 accuracy: 0.8414
+2026-04-16 23:25:28 f1_macro: 0.6145
+2026-04-16 23:25:28 loss: 0.5615
+2026-04-16 23:25:28 
+2026-04-16 23:25:37 --- Train epoch-23, step-3840 ---
+2026-04-16 23:25:37 loss: 0.1516
+2026-04-16 23:25:38 --- Eval epoch-23, step-3840 ---
+2026-04-16 23:25:38 accuracy: 0.8445
+2026-04-16 23:25:38 f1_macro: 0.6192
+2026-04-16 23:25:38 loss: 0.5658
+2026-04-16 23:25:38 
+2026-04-16 23:25:46 --- Train epoch-24, step-4000 ---
+2026-04-16 23:25:46 loss: 0.1686
+2026-04-16 23:25:47 --- Eval epoch-24, step-4000 ---
+2026-04-16 23:25:47 accuracy: 0.8367
+2026-04-16 23:25:47 f1_macro: 0.6143
+2026-04-16 23:25:47 loss: 0.5657
+2026-04-16 23:25:47 
+2026-04-16 23:25:56 --- Train epoch-25, step-4160 ---
+2026-04-16 23:25:56 loss: 0.1257
+2026-04-16 23:25:57 --- Eval epoch-25, step-4160 ---
+2026-04-16 23:25:57 accuracy: 0.8539
+2026-04-16 23:25:57 f1_macro: 0.6236
+2026-04-16 23:25:57 loss: 0.5664
+2026-04-16 23:25:57 
+2026-04-16 23:26:05 --- Train epoch-26, step-4320 ---
+2026-04-16 23:26:05 loss: 0.1050
+2026-04-16 23:26:05 --- Eval epoch-26, step-4320 ---
+2026-04-16 23:26:05 accuracy: 0.8344
+2026-04-16 23:26:05 f1_macro: 0.6126
+2026-04-16 23:26:05 loss: 0.5947
+2026-04-16 23:26:05 
+2026-04-16 23:26:14 --- Train epoch-27, step-4480 ---
+2026-04-16 23:26:14 loss: 0.1143
+2026-04-16 23:26:14 --- Eval epoch-27, step-4480 ---
+2026-04-16 23:26:14 accuracy: 0.8789
+2026-04-16 23:26:14 f1_macro: 0.6505
+2026-04-16 23:26:14 loss: 0.4215
+2026-04-16 23:26:14 
+2026-04-16 23:26:23 --- Train epoch-28, step-4640 ---
+2026-04-16 23:26:23 loss: 0.0986
+2026-04-16 23:26:24 --- Eval epoch-28, step-4640 ---
+2026-04-16 23:26:24 accuracy: 0.8617
+2026-04-16 23:26:24 f1_macro: 0.6264
+2026-04-16 23:26:24 loss: 0.5730
+2026-04-16 23:26:24 
+2026-04-16 23:26:32 --- Train epoch-29, step-4800 ---
+2026-04-16 23:26:32 loss: 0.1062
+2026-04-16 23:26:33 --- Eval epoch-29, step-4800 ---
+2026-04-16 23:26:33 accuracy: 0.8578
+2026-04-16 23:26:33 f1_macro: 0.6210
+2026-04-16 23:26:33 loss: 0.5515
